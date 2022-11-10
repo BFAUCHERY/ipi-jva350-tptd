@@ -142,10 +142,10 @@ public final class Entreprise {
     }
 
     public static boolean estDansPlage(LocalDate d, LocalDate debut, LocalDate fin) {
-        if (d.isAfter(fin) || d.isBefore(debut)) {
-            return false;
-        } else {
+        if (d.isAfter(debut) && d.isBefore(fin)) {
             return true;
+        } else {
+            return false;
         }
         // Comment : Les TDD ont permi de mettre en évidence que la date a tester peut être la date de debut ou la date de fin.
     }
