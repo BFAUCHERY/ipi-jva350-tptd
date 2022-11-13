@@ -9,7 +9,7 @@ public final class Entreprise {
 
     private static final Map<Integer, LocalDate> datePaque = new HashMap<>();
 
-    public Entreprise() {
+    private Entreprise() {
 
     }
 

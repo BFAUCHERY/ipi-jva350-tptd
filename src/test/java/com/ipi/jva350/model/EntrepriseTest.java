@@ -1,7 +1,5 @@
 package com.ipi.jva350.model;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.Assertions;
@@ -22,9 +20,7 @@ class EntrepriseTest {
 	"'2023-06-22', 'false'"
 	})
 	void testEstJourFerie(LocalDate date,boolean expectFerie) {
-		//Given
-		Entreprise entrepriseTest = new Entreprise();
-		//When, Then
+		//Given, When, Then
 		Assertions.assertEquals(expectFerie,Entreprise.estJourFerie(date));
 	}
 
