@@ -35,9 +35,7 @@ class SalarieAideADomicileRepositoryTest {
 		//la fonction salarieAideADomicileRepository.partCongesPrisTotauxAnneeNMoins1() divise la somme des congesPayesPrisAnneeNMoins1 avec congesPayesAcquisAnneeNMoins1
 		
 		SalarieAideADomicile aide = new SalarieAideADomicile("Numéro 1976562821", LocalDate.of(2021, 7, 1),LocalDate.now(),0,0,9,congesPayesAcquisAnneeNMoins1,congesPayesPrisAnneeNMoins1);
-		salarieAideADomicileRepository.save(aide);
-		System.out.println(salarieAideADomicileRepository.partCongesPrisTotauxAnneeNMoins1());
-		
+		salarieAideADomicileRepository.save(aide);		
 		Assertions.assertEquals(result,salarieAideADomicileRepository.partCongesPrisTotauxAnneeNMoins1());
 
 
