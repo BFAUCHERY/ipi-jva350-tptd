@@ -9,7 +9,7 @@ public final class Entreprise {
 
     private static final Map<Integer, LocalDate> datePaque = new HashMap<>();
 
-    private Entreprise() {
+    Entreprise() {
 
     }
 
@@ -136,8 +136,12 @@ public final class Entreprise {
     }
 
     public static boolean estDansPlage(LocalDate d, LocalDate debut, LocalDate fin) {
-        // à implémenter en TDD !
-        throw new UnsupportedOperationException();
+        if ((d.isAfter(debut) && d.isBefore(fin)) || d.isEqual(debut) || d.isEqual(fin)) {
+            return true;
+        } 
+        return false;
+ 
+        // Comment pour le TP : Les TDD ont permi de mettre en évidence que la date a tester peut être la date de debut ou la date de fin.
     }
 
 }
