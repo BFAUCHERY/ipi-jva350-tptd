@@ -119,3 +119,11 @@ fichier ne dépasse pas 1 MO.
 - Rédigez **ci-dessous** une courte analyse du rapport produit par Sonar (métriques, évolution, état général...) :
 
 Le rapport Sonar final indique...
+
+      Coverage	is less than	80.0%
+      Duplicated Lines (%)	is greater than	3.0%
+      Maintainability Rating	is worse than	A
+      Reliability Rating	is worse than	A
+      Security Hotspots Reviewed	is less than	100%
+      Security Rating	is worse than	A
+      Maintainability : 24 Code Smells
