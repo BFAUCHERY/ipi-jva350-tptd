@@ -19,7 +19,7 @@ class EntrepriseTest {
 	        "'2022-07-08', '2022-07-01', '2022-07-07', false",
 	        "'2022-08-31', '2022-07-01', '2022-07-07', false"
 	})
-	void estDansPlage(String now, String debut, String fin, boolean expectedResult) {
+	void TestEstDansPlage(String now, String debut, String fin, boolean expectedResult) {
 		//Given
 		Entreprise aide = new Entreprise();
 		//When
