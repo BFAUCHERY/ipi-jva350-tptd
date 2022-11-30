@@ -25,7 +25,7 @@ class SalarieAideADomicileRepositoryTest {
 	
 	@ParameterizedTest(name = "congesPayesAcquisAnneeNMoins1: {0} et congesPayesPrisAnneeNMoins1: {1}, resultats attendu: {2}")
 	@CsvSource({
-	"10, 25, 2.5"
+	"10, 20, 2"
 	
 	})
 	void testPartCongesPrisTotauxAnneeNMoins1(double congesPayesAcquisAnneeNMoins1, double congesPayesPrisAnneeNMoins1, double result) {
