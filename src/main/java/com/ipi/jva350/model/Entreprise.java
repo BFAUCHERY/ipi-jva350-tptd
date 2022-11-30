@@ -1,6 +1,6 @@
 package com.ipi.jva350.model;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import java.lang.UnsupportedOperationException;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -73,13 +73,8 @@ public final class Entreprise {
     public static boolean bissextile(int y) {
         String tmp = String.valueOf(y);
         if (tmp.charAt(2) == '1' || tmp.charAt(2) == '3' || tmp.charAt(2) == 5 || tmp.charAt(2) == '7' || tmp.charAt(2) == '9') {
-            if (tmp.charAt(3)=='2'||tmp.charAt(3)=='6') return true;
-            else
-                return false;
+            if (tmp.charAt(3)=='2'||tmp.charAt(3)=='6')return true;
         }else{
-            if (tmp.charAt(2) == '0' && tmp.charAt(3) == '0') {
-                return false;
-            }
             if (tmp.charAt(3)=='0'||tmp.charAt(3)=='4'||tmp.charAt(3)=='8')return true;
         }
         return false;
@@ -126,16 +121,15 @@ public final class Entreprise {
 
 
     public static LocalDate getPremierJourAnneeDeConges(LocalDate d) {
-        return d == null ? null
-                : d.getMonthValue() > 5 ? LocalDate.of(d.getMonthValue(), 6, 1)
-                : LocalDate.of(d.getYear() - 1, 6, 1);
+    	LocalDate premierJourAnneeDeConges = d.getMonthValue() > 5 ? LocalDate.of(d.getYear(), 6, 1) : LocalDate.of(d.getYear() - 1, 6, 1);
+        return d == null ? null : premierJourAnneeDeConges;
     }
 
     public static boolean estJourFerie(LocalDate jour) {
         int monEntier = (int) Entreprise.joursFeries(jour).stream().filter(d ->
                 d.equals(jour)).count();
         int test = bissextile(jour.getYear()) ? 1 : 0;
-        if (test != 0 && !(monEntier > 1)) {
+        if (test != 0 && monEntier <= 1) {
             test--;
         }
         return monEntier != test;
