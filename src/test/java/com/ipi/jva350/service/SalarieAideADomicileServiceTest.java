@@ -27,6 +27,15 @@ class SalarieAideADomicileServiceTest {
 		Assertions.assertEquals(20, aide.getJoursTravaillesAnneeN());
 	}
 	
+	
+	@Test
+	void calculeLimiteEntrepriseCongesPermis() {
+		SalarieAideADomicileService aide = new SalarieAideADomicileService();
+		
+		long res = aide.calculeLimiteEntrepriseCongesPermis(LocalDate.of(2021, 7, 1), 20, LocalDate.of(2021, 3, 1), LocalDate.of(2021, 7, 7), LocalDate.of(2021, 7, 14));
+		//System.printOut
+		Assertions.assertEquals(10, res);
+	}
 
 }
 
